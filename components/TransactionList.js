@@ -55,7 +55,6 @@ export default function TransactionList({ transactions, selectedCurrency, rates 
                 {tx.type === "credit" ? "Deposit" : "Withdraw"}
               </TableCell>
 
-              {/* ✅ Amount with + or - sign and colored */}
               <TableCell
                 style={{ color: tx.type === "credit" ? "green" : "red" }}
               >

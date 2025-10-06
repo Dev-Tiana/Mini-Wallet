@@ -69,7 +69,7 @@ export default function Home() {
         justifyContent: "center",
         textAlign: "center",
         paddingTop: "80px",
-        px: isMobile ? 1 : 3, // ✅ tighter padding on mobile
+        px: isMobile ? 1 : 3, 
       }}
     >
       <Typography variant="h4" gutterBottom>
@@ -79,7 +79,7 @@ export default function Home() {
       {isLoading && <Typography>Loading exchange rates...</Typography>}
       {fetchError && <Typography color="error">Failed to load rates</Typography>}
 
-      {/* Currency Switcher */}
+      {/* Currency Changer */}
       <Stack
         direction="row"
         spacing={2}
@@ -129,7 +129,7 @@ export default function Home() {
         type={openDialog}
       />
 
-      {/* Snackbar for errors */}
+      {/* for errors */}
       <Snackbar
         open={Boolean(error)}
         autoHideDuration={3000}
@@ -147,7 +147,7 @@ export default function Home() {
       </Typography>
 
       {isMobile ? (
-        // ✅ Mobile Layout
+        // For Mobile Layout
         <List sx={{ width: "100%", maxWidth: "100%", p: 0 }}>
           {transactions.slice(0, 5).map((tx) => (
             <ListItem
@@ -224,7 +224,7 @@ export default function Home() {
           ))}
         </List>
       ) : (
-        // ✅ Desktop / Tablet Layout
+        // For Desktop / Tablet Layout
         <TableContainer
           component={Paper}
           sx={{

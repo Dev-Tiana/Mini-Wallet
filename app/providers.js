@@ -6,7 +6,6 @@ import { useState, useMemo, createContext, useContext } from "react";
 
 const queryClient = new QueryClient();
 
-// Create Theme Context
 const ThemeModeContext = createContext();
 
 export function useThemeMode() {
@@ -35,7 +34,7 @@ export function Providers({ children }) {
       <WalletProvider>
         <ThemeModeContext.Provider value={{ mode, toggleTheme }}>
           <ThemeProvider theme={theme}>
-            <CssBaseline /> {/* ✅ applies proper dark/light background */}
+            <CssBaseline />
             {children}
           </ThemeProvider>
         </ThemeModeContext.Provider>

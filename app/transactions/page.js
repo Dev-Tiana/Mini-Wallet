@@ -34,7 +34,7 @@ export default function Transactions() {
       sx={{
         paddingTop: "80px",
         maxWidth: "100%",
-        px: isMobile ? 0.8 : 4, // ✅ reduce side padding on mobile
+        px: isMobile ? 0.8 : 4,
       }}
     >
       <Typography
@@ -51,14 +51,14 @@ export default function Transactions() {
       ) : (
         <>
           {isMobile ? (
-            /* ✅ Mobile Layout */
+            /* For Mobile */
             <List sx={{ width: "100%", maxWidth: "100%", p: 0 }}>
               {transactions.map((tx) => (
                 <ListItem
                   key={tx.id}
                   sx={{
                     borderBottom: "1px solid #eee",
-                    px: 1, // ✅ tighter padding per list item
+                    px: 1, 
                     py: 1.2,
                     display: "flex",
                     justifyContent: "space-between",
@@ -134,7 +134,9 @@ export default function Transactions() {
               ))}
             </List>
           ) : (
-            /* ✅ Desktop & Tablet Layout */
+
+
+            /*For Desktop & Tablet */
             <TableContainer
               component={Paper}
               sx={{

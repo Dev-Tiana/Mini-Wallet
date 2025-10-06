@@ -7,9 +7,9 @@ export const WalletContext = createContext();
 export const WalletProvider = ({ children }) => {
   const [balance, setBalance] = useState(1000);   
   const [transactions, setTransactions] = useState([]);
-  const [error, setError] = useState(""); // ✅ new error state
+  const [error, setError] = useState("");
 
-  // Load saved balance & transactions
+  // Use to Load saved balance & transactions
   useEffect(() => {
     const savedBalance = loadFromStorage("balance", null);
     const savedTx = loadFromStorage("transactions", null);
@@ -18,7 +18,7 @@ export const WalletProvider = ({ children }) => {
     setTransactions(savedTx !== null ? savedTx : []);
   }, []);
 
-  // Save to localStorage whenever updated
+  // Use Save to localStorage whenever updated
   useEffect(() => {
     saveToStorage("balance", balance);
     saveToStorage("transactions", transactions);
@@ -48,8 +48,8 @@ export const WalletProvider = ({ children }) => {
     type,
     amount,
     balanceRemaining: newBalance,
-    date: now.toLocaleDateString(),   // ✅ store only date
-    time: now.toLocaleTimeString(),   // ✅ store only time
+    date: now.toLocaleDateString(),   
+    time: now.toLocaleTimeString(),   
   };
 
   setBalance(newBalance);
